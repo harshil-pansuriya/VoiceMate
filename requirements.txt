@@ -13,10 +13,9 @@ pinecone-client
 
 sentence-transformers
 
-google-cloud-speech
-google-cloud-texttospeech
+gtts
 
-
+pydantic
 python-dotenv
 requests
 pytest
