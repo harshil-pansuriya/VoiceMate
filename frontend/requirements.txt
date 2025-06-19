@@ -1,0 +1,6 @@
+streamlit
+sounddevice
+soundfile
+requests
+numpy
+streamlit-webrtc
