@@ -12,7 +12,7 @@ import json
 # Page config
 st.set_page_config(page_title="VoiceMate AI", page_icon="🎙️", layout="centered")
 
-BACKEND_URL = "https://huggingface.co/spaces/harshil-pansuriya/VoiceMate-AI/process_voice"
+BACKEND_URL = "https://harshil-pansuriya-voicemate-ai.hf.space/process_voice"
 
 # Optimized CSS with reduced redundancy
 st.markdown("""

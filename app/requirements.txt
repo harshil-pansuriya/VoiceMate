@@ -10,7 +10,7 @@ langchain-groq
 langchain-pinecone
 pinecone-client
 
-
+python-multipart
 sentence-transformers
 
 gtts

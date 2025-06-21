@@ -1,4 +1,4 @@
-# Use official Python 3.9 slim image
+# Use official Python 3.11 slim image
 FROM python:3.11.4
 
 # Set working directory
@@ -17,12 +17,16 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Create and set permissions for a custom cache directory
-RUN mkdir -p /app/.cache && chmod -R 777 /app/.cache
+# Create logs directory and set permissions
+RUN mkdir -p /app/logs && chmod -R 777 /app/logs
 
-# Set cache directory to /tmp/ (writable in Docker)
-ENV XDG_CACHE_HOME=/tmp/.cache
-ENV HF_HOME=/tmp/.cache
+# Create cache directories and set permissions
+RUN mkdir -p /app/.cache /tmp/.cache/hub && chmod -R 777 /app/.cache /tmp/.cache
+
+# Set cache directory environment variables
+ENV XDG_CACHE_HOME=/app/.cache
+ENV HF_HOME=/app/.cache/hub
+ENV TRANSFORMERS_CACHE=/app/.cache/hub
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
